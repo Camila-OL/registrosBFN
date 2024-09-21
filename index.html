@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de banimento</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="left">Bora Falar de Novela</div>
+        <div class="right"><a href="#adm-area">Área Adm</a></div>
+    </header>
+
+    <main>
+        <section class="title-section">
+            <h1>Registro de Punição</h1>
+        </section>
+
+        <section class="carousel-section">
+            <div class="carousel" id="carousel">
+                <div class="card">Cartão 1</div>
+            </div>
+            <button id="prev">◀</button>
+            <button id="next">▶</button>
+        </section>
+
+        <section class="links-section">
+            <h2>Fale com um Adm ou Moderador</h2>
+            <div class="links">
+                <a href="#">Nome 1</a>
+                <a href="#">Nome 2</a>
+                <a href="#">Nome 3</a>
+                <a href="#">Nome 4</a>
+                <a href="#">Nome 5</a>
+                <a href="#">Nome 6</a>
+                <a href="#">Nome 7</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>Projeto dedicado ao grupo "Bora Falar de Novela"</p>
+        <p>Criador do site: Camila de Oliveira</p>
+    </footer>
+
+    <!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h3>Área do administrador</h3>
+        <button onclick="registrar()">registrar</button>
+        <button onclick="painel()">painel de análise</button>
+
+        <button id="submitAnswers">Sair</button>
+    </div>
+</div>
+
+<!-- Modal registrar -->
+<div id="myModal1" class="modal1">
+    <div class="modal-content1">
+        <h1>Adicionar Novo Registro</h1>
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="id">id:</label>
+                <input type="text" id="id" placeholder="Digite o id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">nome:</label>
+                <input type="text" id="nome" placeholder="Digite o nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="perfil">perfil:</label>
+                <input type="text" id="perfil" placeholder="Digite o perfil" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">descricao:</label>
+                <input type="text" id="descricao" placeholder="Digite a descricao" required>
+            </div>
+
+            <div class="form-group">
+                <label for="punicao">punicao:</label>
+                <input type="text" id="punicao" placeholder="Digite a punicao" required>
+            </div>
+
+            <button type="submit">Adicionar Registro</button>
+        </form>
+
+        <button id="closeRegisterModal">Sair</button>
+    </div>
+</div>
+
+<div id="myModal2" class="modal2">
+    <div class="modal-content2">
+        <h2>Painel de Análise</h2>
+        <form id="analysisForm">
+            <label><input type="radio" name="opcao" value="ofensa"> Ofendeu Gratuitamente</label><br>
+            <label><input type="radio" name="opcao" value="bullying"> Fez Bullying</label><br>
+            <label><input type="radio" name="opcao" value="politica"> Falou Sobre Política</label><br>
+            <label><input type="radio" name="opcao" value="anuncio"> Tentou Anunciar</label><br>
+            <label><input type="radio" name="opcao" value="racismo"> Foi Racista/Machista</label><br>
+            <label><input type="radio" name="opcao" value="comentario"> Comentário Desnecessário</label><br>
+            <label><input type="radio" name="opcao" value="revide"> Foi Ofendido e Ofendeu de Volta</label><br>
+
+            <div class="pun"></div>
+
+            <button type="button" id="analyzeButton">Analisar</button>
+        </form>
+        <button id="closeModalButton2">Sair</button>
+    </div>
+</div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
