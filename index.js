@@ -34,12 +34,13 @@ async function exibir() {
         for (let i = 0; i < data.length; i++) {
             if (i < totalCards) {
                 // Preenche os cartões existentes
-                existingCards[i].innerHTML = `<strong>${data[i].id}</strong> <br> ${data[i].nome} ${data[i].perfil} ${data[i].descricao} <br> ${data[i].punicao}`;
+                existingCards[i].innerHTML = `<strong style="text-align: center;">${data[i].id}</strong> <img src="images/Google_Contacts_logo.png"> <strong style="text-align: center;">${data[i].nome}</strong> <br> ${data[i].perfil} <br> ${data[i].descricao} <br> ${data[i].punicao}`;
+                
             } else {
                 // Se não houver cartões suficientes, cria novos
                 let newCard = document.createElement('div');
                 newCard.classList.add('card');
-                newCard.innerHTML = `<strong>${data[i].id}</strong> <br> ${data[i].nome} ${data[i].perfil} ${data[i].descricao} <br> ${data[i].punicao}`;
+                newCard.innerHTML = `<strong>${data[i].id}</strong> <img src="images/Google_Contacts_logo.png"> <strong>${data[i].nome}</strong <br> ${data[i].perfil} <br> ${data[i].descricao} <br> ${data[i].punicao}`;
                 carousel.appendChild(newCard);
             }
         }

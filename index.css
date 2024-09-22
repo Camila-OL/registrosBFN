@@ -8,6 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -32,16 +33,41 @@ header .left {
 header .right a {
     text-decoration: none;
     color: #007BFF;
+    font-size: 20px;
 }
 
-main {
-    flex-grow: 1; /* Permite que o conteúdo principal cresça para ocupar o espaço */
-    padding: 20px;
-    text-align: center;
+.left img {
+    width: 150px;
+}
+
+.back {
+    width: 100vw; /* 100% da largura da tela */
+    height: 100vh; /* 100% da altura da tela */
+    background-image: url('images/capa.jpg'); /* Substitua pela sua imagem */
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem no centro */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-int {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma sobreposição preta semi-transparente */
+
 }
 
 .title-section h1 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 5px 5px 5px #999;
 }
 
 .carousel-section {
@@ -51,22 +77,35 @@ main {
     justify-content: center;
 }
 
+#carousel {
+    width: 600px;
+    overflow-x: hidden; /* Evita o scroll horizontal */
+}
+
 .carousel {
     display: flex;
-    overflow-x: auto;
     scroll-behavior: smooth;
 }
 
 .carousel .card {
-    width: 450px;
+    width: 350px;
     height: 350px;
-    background-color: #f0f0f0;
-    margin: 0 10px;
+    background-color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-weight: bold;
+    flex-direction: column;
+    margin-left: 10%;
+    padding: 2%;
+    overflow-x: hidden;
+    font-size: 15px;
+    border-radius: 10px;
+    word-wrap: break-word; /* Quebra automaticamente palavras muito longas */
+    word-break: break-word; /* Quebra se a palavra for longa demais */
+    flex-shrink: 0; /* Garante que o card não encolha */
+}
+
+.card img {
+    width: 100px;
+    margin-left: 35%;
 }
 
 .carousel-section button {
@@ -80,11 +119,49 @@ main {
 }
 
 #prev {
-    left: 10px;
+    left: -50px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    animation: moveRightLeft 4s ease-in-out infinite;
 }
 
 #next {
-    right: 10px;
+    right: -50px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    animation: move 4s ease-in-out infinite;
+}
+@keyframes moveRightLeft {
+    0% {
+        left: 0; /* Ponto inicial */
+    }
+    50% {
+        left: -100px; /* Move a 300px à direita */
+    }
+    100% {
+        left: 0; /* Retorna à posição inicial */
+    }
+}
+@keyframes move {
+    0% {
+        right: 0; /* Ponto inicial */
+    }
+    50% {
+        right: -100px; /* Move a 300px à direita */
+    }
+    100% {
+        right: 0; /* Retorna à posição inicial */
+    }
+}
+
+.info {
+    width: 200px;
 }
 
 .links-section {
@@ -93,24 +170,20 @@ main {
 
 .links-section h2 {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .links {
     display: flex;
-    justify-content: flex-start; /* Alinha as bolinhas à esquerda */
+    justify-content: center; /* Alinha as bolinhas à esquerda */
     gap: 10px;
     overflow-x: auto; /* Adiciona o scroll horizontal */
     padding: 10px;
 }
 
 .links a {
-    min-width: 40px; /* Define a largura mínima das bolinhas */
-    height: 40px;
-    background-color: #007BFF;
-    color: white;
     text-align: center;
     line-height: 40px;
-    border-radius: 50%;
     text-decoration: none;
     flex-shrink: 0; /* Impede que as bolinhas encolham */
 }
@@ -123,7 +196,15 @@ main {
     background-color: #007BFF; /* Cor do "polegar" do scroll */
     border-radius: 3px;
 }
-
+.align {
+    text-align: center;
+}
+.buble {
+    width: 100px;
+    height: 100px;
+    background-color: #007BFF;
+    border-radius: 50%;
+}
 
 footer {
     background-color: #000;
