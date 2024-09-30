@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise de banimento</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -21,35 +24,58 @@
 
                 <section class="carousel-section">
                     <div class="carousel" id="carousel">
-                        <div class="card">carregando...</div>
+                        <div class="card" style="text-align: center;">carregando...</div>
                     </div>
-                    <button id="prev">◀</button>
-                    <button id="next">▶</button>
+                    <div class="botoes">
+                        <button id="prev">◀</button>
+                        <button id="next">▶</button>
+                    </div>
                 </section>
             </div>
         </div>
 
         <section class="links-section">
             <h2>Fale com um Adm ou Moderador</h2>
-            <div class="links">
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
-                <div class="align"><div class="buble"></div><a href="#">Nome 1</a></div>
+            <div class="balls">
+                <div class="links">
+                    <div class="align">
+                        <div class="buble b"></div>
+                        <a href="https://www.facebook.com/bruna.silva.988373" target="_blank">Bruna Moura</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble a"></div>
+                        <a href="https://www.facebook.com/aguinaldo.miguel.54" target="_blank">Aguinaldo Miguel</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble j"></div>
+                        <a href="https://www.facebook.com/josefelipe.amorim.73" target="_blank">José Felipe</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble c"></div>
+                        <a href="https://www.facebook.com/profile.php?id=100069079084504" target="_blank">Camila De <br> Oliveira</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble g"></div>
+                        <a href="https://www.facebook.com/ketellen.sgotti" target="_blank">Ketellen Sgotti <br> Michurin</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble"></div>
+                        <a href="https://www.facebook.com/gabriella.c.teixeira - jul - https://www.facebook.com/gabriella.c.teixeira " target="_blank">Gabriella <br> Carvalheiro</a>
+                    </div>
+                    <div class="align">
+                        <div class="buble"></div>
+                        <a href="https://www.facebook.com/profile.php?id=100090400611902" target="_blank">Juliano Dos <br> Santos</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=100069079084504" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/millah_05?igsh=N3Z4ZjBwMHpxa3U1" target="_blank">Instagram</a>
+            <a href="https://www.wattpad.com/user/milladark8" target="_blank">Wattpad</a>
         </div>
         <p>Projeto dedicado ao grupo "Bora Falar de Novela"</p>
         <p>Criador do site: Camila de Oliveira</p>
@@ -59,8 +85,8 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <h3>Área do administrador</h3>
-        <button onclick="registrar()">registrar</button>
-        <button onclick="painel()">painel de análise</button>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="painel()">Painel de análise</button>
 
         <button id="submitAnswers">Sair</button>
     </div>
@@ -69,30 +95,26 @@
 <!-- Modal registrar -->
 <div id="myModal1" class="modal1">
     <div class="modal-content1">
-        <h1>Adicionar Novo Registro</h1>
+        <h1>Adicionar novo registro</h1>
         <form id="registroForm">
-            <div class="form-group">
-                <label for="id">id:</label>
-                <input type="text" id="id" placeholder="Digite o id" required>
-            </div>
 
             <div class="form-group">
-                <label for="nome">nome:</label>
+                <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Digite o nome" required>
             </div>
 
             <div class="form-group">
-                <label for="perfil">perfil:</label>
+                <label for="perfil">Perfil:</label>
                 <input type="text" id="perfil" placeholder="Digite o perfil" required>
             </div>
 
             <div class="form-group">
-                <label for="descricao">descricao:</label>
+                <label for="descricao">Descricao:</label>
                 <input type="text" id="descricao" placeholder="Digite a descricao" required>
             </div>
 
             <div class="form-group">
-                <label for="punicao">punicao:</label>
+                <label for="punicao">Punicao:</label>
                 <input type="text" id="punicao" placeholder="Digite a punicao" required>
             </div>
 
@@ -117,8 +139,9 @@
 
             <div class="pun"></div>
 
-            <button type="button" id="analyzeButton">Analisar</button>
+            
         </form>
+        <button type="button" id="analyzeButton">Analisar</button>
         <button id="closeModalButton2">Sair</button>
     </div>
 </div>

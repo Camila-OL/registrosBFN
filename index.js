@@ -5,14 +5,14 @@ const nextButton = document.getElementById('next');
 
 prevButton.addEventListener('click', () => {
     carousel.scrollBy({
-        left: -200,
+        left: -350,
         behavior: 'smooth'
     });
 });
 
 nextButton.addEventListener('click', () => {
     carousel.scrollBy({
-        left: 200,
+        left: 350,
         behavior: 'smooth'
     });
 });
@@ -34,13 +34,13 @@ async function exibir() {
         for (let i = 0; i < data.length; i++) {
             if (i < totalCards) {
                 // Preenche os cartões existentes
-                existingCards[i].innerHTML = `<strong style="text-align: center;">${data[i].id}</strong> <img src="images/Google_Contacts_logo.png"> <strong style="text-align: center;">${data[i].nome}</strong> <br> ${data[i].perfil} <br> ${data[i].descricao} <br> ${data[i].punicao}`;
+                existingCards[i].innerHTML = `<img src="images/Google_Contacts_logo.png"> <strong style="text-align: center;" class="nome">${data[i].nome}</strong> <br> <p class="perfil">${data[i].perfil}</p> <br> <p class="descricao">${data[i].descricao}</p> <br> <p class="punicao">${data[i].punicao}</p>`;
                 
             } else {
                 // Se não houver cartões suficientes, cria novos
                 let newCard = document.createElement('div');
                 newCard.classList.add('card');
-                newCard.innerHTML = `<strong>${data[i].id}</strong> <img src="images/Google_Contacts_logo.png"> <strong>${data[i].nome}</strong <br> ${data[i].perfil} <br> ${data[i].descricao} <br> ${data[i].punicao}`;
+                newCard.innerHTML = `<img src="images/Google_Contacts_logo.png"> <strong class="nome">${data[i].nome}</strong <br> <p class="perfil">${data[i].perfil}</p> <br> <p class="descricao">${data[i].descricao}</p> <br> <p class="punicao">${data[i].punicao}</p>`;
                 carousel.appendChild(newCard);
             }
         }
@@ -104,7 +104,6 @@ function registrar() {
 
         // Pegue os campos do formulário
         const form = document.getElementById('registroForm');
-        const idInput = document.getElementById('id');
         const nomeInput = document.getElementById('nome');
         const perfilInput = document.getElementById('perfil');
         const descricaoInput = document.getElementById('descricao');
@@ -117,7 +116,6 @@ function registrar() {
 
                 // Pegue os valores dos campos
                 const novoObjeto = {
-                    id: idInput.value,
                     nome: nomeInput.value,
                     perfil: perfilInput.value,
                     descricao: descricaoInput.value,
@@ -223,16 +221,3 @@ function painel() {
         alert('senha incorreta!');
     }
 }
-
-//deletar registro: curl -X DELETE https://apiregistro.onrender.com/{id}
-
-/*
-decidir punição
-ofendeu gratuitamente
-fez bulliyng
-falou sobre politica 
-tentou anunciar
-foi racista/ machista 
-comentário desnecessário (sobre aparência)
-foi ofendido e ofendeu de volta
-*/
